@@ -4,6 +4,7 @@
 ////////////////////////////////////////////////
 'use strict';
 
+
 function getInput() {
     return prompt();
 }
@@ -44,7 +45,6 @@ function getWinner(playerMove,computerMove) {
     // Write code that will set winner to either 'player', 'computer', or 'tie' based on the values of playerMove and computerMove.
     // Assume that the only values playerMove and computerMove can have are 'rock', 'paper', and 'scissors'.
     // The rules of the game are that 'rock' beats 'scissors', 'scissors' beats 'paper', and 'paper' beats 'rock'.
-    /* YOUR CODE HERE */
     if (playerMove === computerMove) {
             winner = 'tie';
              console.log('Player chose ' + playerMove + ' while Computer chose ' + computerMove + '.');
@@ -81,7 +81,9 @@ function getWinner(playerMove,computerMove) {
            console.log('Player chose ' + playerMove + ' while Computer chose ' + computerMove + '.');
             console.log("Computer wins!");
         }
-        return winner;
+      
+    
+    return winner;
 }
 
 function playToFive() {
@@ -90,15 +92,12 @@ function playToFive() {
     var playerWins = 0;
     var computerWins = 0;
     // Write code that plays 'Rock, Paper, Scissors' until either the player or the computer has won five times.
-    /* YOUR CODE HERE */
     
     while (playerWins < 5 && computerWins < 5) {
     // Gets the players and computers last move
-    /// Below line is currently causing issues, entering randomPlay() always results in Player chose 'null'.
-    
         var playerMove;
         var computerMove;
-    var winner = getWinner(playerMove, computerMove);
+        var winner = getWinner(playerMove, computerMove);
 
         if (winner === "player") {
         playerWins ++;
@@ -108,7 +107,7 @@ function playToFive() {
       winner = "tie";
 }
     }
-    
+    // Final lines after the loop finishes
     console.log('Player won ' + playerWins + ' games, whilst Computer won ' + computerWins + ' games.');
     
     if (playerWins > computerWins) {
@@ -117,4 +116,5 @@ function playToFive() {
         console.log('Better luck next time rookie!');
 }
 
+// Initiates the game
 playToFive();
